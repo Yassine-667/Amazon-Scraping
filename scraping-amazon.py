@@ -62,6 +62,14 @@ for k in range(1,30):
                 price_fraction=div_Container.find('span',{'class':'a-price-fraction'}).get_text()
                 price=float(str(price_whole)+str(price_fraction))
                 temporary_list=[]
+                tempo_var=0
+                while tempo_var==0:
+                    try:
+                        rating_container=div_Container.find('span',{'class':'a-icon-alt'}).get_text()
+                        rating=float(rating_container[0:3])
+                    except:
+                        rating='Not Available'
+                    tempo_var=1
                 temporary_list.append(div_title)
                 temporary_list.append(price)
                 temporary_list.append(rating)
